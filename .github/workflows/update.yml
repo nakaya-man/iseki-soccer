@@ -2,8 +2,10 @@ name: 移籍情報の自動更新
 
 on:
   schedule:
+    # 毎日 UTC 22:00 = 日本時間 朝7:00 に自動実行
     - cron: "0 22 * * *"
   workflow_dispatch:
+    # 手動で今すぐ実行したいときはGitHubの画面から「Run workflow」を押す
 
 permissions:
   contents: write
@@ -30,6 +32,9 @@ jobs:
         env:
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
         run: python scripts/collect_x.py
+
+      - name: Jリーグ関連リンクを収集(さっかりん経由・1日1回)
+        run: python scripts/collect_sakkarin.py
 
       - name: AIで日本語要約・信頼度判定
         env:
