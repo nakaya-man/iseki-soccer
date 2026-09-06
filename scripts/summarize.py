@@ -51,7 +51,6 @@ def rule_based_reliability(item):
     if item["source_tier"] == "official" or any(k in text for k in CONFIRMED_KEYWORDS):
         return "confirmed"
     if item["source_tier"] == "insider":
-        # Fabrizio Romano等、実績のある個人記者。個人アカウントだが信頼度は「有力」からスタート
         return "strong"
     if item["source_tier"] == "major":
         return "strong"
@@ -59,6 +58,7 @@ def rule_based_reliability(item):
 
 
 def summarize_item(client, item):
+    raw_text = ""
     try:
         response = client.messages.create(
             model="claude-haiku-4-5-20251001",
@@ -70,9 +70,26 @@ def summarize_item(client, item):
             }]
         )
         raw_text = response.content[0].text.strip()
+
+        if raw_text.startswith("```"):
+            raw_text = raw_text.strip("`")
+            if raw_text.lower().startswith("json"):
+                raw_text = raw_text[4:]
+            raw_text = raw_text.strip()
+
+        start = raw_text.find("{")
+        end = raw_text.rfind("}")
+        if start != -1 and end != -1:
+            raw_text = raw_text[start:end + 1]
+
+        if not raw_text:
+            print(f"抽出に失敗しました (id={item['id']}): AIの応答が空でした")
+            return {"player": "", "from_club": "", "to_club": "", "fee": "", "confidence": "low"}
+
         return json.loads(raw_text)
     except Exception as e:
         print(f"抽出に失敗しました (id={item['id']}): {e}")
+        print(f"  AIの生の応答: {raw_text!r}")
         return {"player": "", "from_club": "", "to_club": "", "fee": "", "confidence": "low"}
 
 
@@ -85,7 +102,7 @@ def main():
         print("新着記事はありません")
         return
 
-    client = Anthropic()  # 環境変数 ANTHROPIC_API_KEY を自動で読み込む
+    client = Anthropic()
 
     published_count = 0
     flagged_count = 0
