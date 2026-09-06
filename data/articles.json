@@ -1,0 +1,38 @@
+[
+  {
+    "id": "sample001",
+    "reliability": "confirmed",
+    "league": "PL",
+    "player": "選手名(サンプル)",
+    "from_club": "RBライプツィヒ",
+    "to_club": "マンチェスター・シティ",
+    "fee": "推定8000万ユーロ",
+    "source_name": "The Athletic",
+    "link": "#",
+    "published": "2026-08-30T10:00:00Z"
+  },
+  {
+    "id": "sample002",
+    "reliability": "strong",
+    "league": "LaLiga",
+    "player": "選手名(サンプル)",
+    "from_club": "アヤックス",
+    "to_club": "レアル・マドリード",
+    "fee": "",
+    "source_name": "Marca",
+    "link": "#",
+    "published": "2026-08-30T05:00:00Z"
+  },
+  {
+    "id": "sample003",
+    "reliability": "rumor",
+    "league": "SerieA",
+    "player": "選手名(サンプル)",
+    "from_club": "フラメンゴ",
+    "to_club": "ACミラン",
+    "fee": "",
+    "source_name": "Gazzetta dello Sport",
+    "link": "#",
+    "published": "2026-08-30T02:00:00Z"
+  }
+]

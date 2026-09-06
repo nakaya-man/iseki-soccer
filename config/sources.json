@@ -1,0 +1,34 @@
+[
+  {
+    "type": "rss",
+    "name": "BBC Sport Football",
+    "rss_url": "https://feeds.bbci.co.uk/sport/football/rss.xml",
+    "league": "PL",
+    "tier": "major",
+    "note": "動作確認用の初期ソース。今後リーグごとに追加していく"
+  },
+  {
+    "type": "x_api",
+    "name": "Fabrizio Romano (X)",
+    "username": "FabrizioRomano",
+    "league": "multi",
+    "tier": "insider",
+    "note": "移籍情報の第一人者。「Here We Go」発言は確定サインとして特別扱いする"
+  },
+  {
+    "type": "x_api",
+    "name": "Jリーグ移籍情報 (X)",
+    "username": "Jleague_shijo",
+    "league": "Jleague",
+    "tier": "insider",
+    "note": "クラブ公式リリース・スポーツ紙情報を中心に発信。エンタメ目的の噂アカウントは信頼性の観点から除外している"
+  },
+  {
+    "type": "x_api",
+    "name": "Transfermarkt English (X)",
+    "username": "TMuk_news",
+    "league": "multi",
+    "tier": "major",
+    "note": "Transfermarkt公式の英語アカウント。Instagramは自動取得の公式手段がないため、X経由でTransfermarktの情報を取得する"
+  }
+]
