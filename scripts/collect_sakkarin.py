@@ -97,7 +97,7 @@ def main():
             "published": datetime.now(timezone.utc).isoformat(),
             "source_name": f"{source_name}(さっかりん経由)",
             "source_tier": "major",
-            "league": "Jleague",
+            "league": "",  # 実際の移籍先リーグはAIが記事内容から判定する
             "collected_at": datetime.now(timezone.utc).isoformat(),
         })
         existing_ids.add(item_id)
