@@ -302,6 +302,11 @@
         </div>
       </div>
 
+      <div class="filter-group" id="clubFilterGroup" style="display:none;">
+        <div class="filter-label">🏟️ チーム</div>
+        <div class="chip-scroll" id="clubChips"></div>
+      </div>
+
       <div class="filter-group">
         <div class="filter-label">📊 移籍ステータス</div>
         <div class="chip-scroll" id="reliabilityChips">
@@ -327,9 +332,9 @@
 const relLabel = { confirmed:'移籍決定', strong:'有力', rumor:'噂' };
 const relDot = { confirmed:'🟢', strong:'🟡', rumor:'🟡' };
 const leagueLabel = { PL:'プレミアリーグ', LaLiga:'ラ・リーガ', SerieA:'セリエA', Bundesliga:'ブンデスリーガ', Ligue1:'リーグ・アン', Portugal:'プリメイラ・リーガ', Netherlands:'エールディヴィジ', Scotland:'スコティッシュプレミア', MLS:'MLS', Jleague:'Jリーグ' };
-const leagueFlag = { PL:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', LaLiga:'🇪🇸', SerieA:'🇮🇹', Bundesliga:'🇩🇪', Ligue1:'🇫🇷', Portugal:'🇵🇹', Netherlands:'🇳🇱', Scotland:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', MLS:'🇺🇸', Jleague:'🇯🇵' };
+const leagueFlag = { PL:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', LaLiga:'🇪🇸', SerieA:'🇮🇹', Bundesliga:'🇩🇪', Ligue1:'🇫🇷', Portugal:'🇵🇹', Netherlands:'🇳🇱', Scotland:'🏴', MLS:'🇺🇸', Jleague:'🇯🇵' };
 
-let state = { rel:'all', league:'all', q:'' };
+let state = { rel:'all', league:'all', club:'all', q:'' };
 let DATA = [];
 
 function timeAgo(iso){
@@ -347,10 +352,38 @@ function renderTicker(){
   track.innerHTML = tItems.join('') + tItems.join('');
 }
 
+function renderClubChips(){
+  const group = document.getElementById('clubFilterGroup');
+  const clubChips = document.getElementById('clubChips');
+
+  if(state.league === 'all'){
+    group.style.display = 'none';
+    return;
+  }
+
+  const clubs = new Set();
+  DATA.forEach(d => {
+    if(d.league !== state.league) return;
+    if(d.from_club) clubs.add(d.from_club);
+    if(d.to_club) clubs.add(d.to_club);
+  });
+
+  if(clubs.size === 0){
+    group.style.display = 'none';
+    return;
+  }
+
+  group.style.display = 'block';
+  const sorted = Array.from(clubs).sort((a,b) => a.localeCompare(b, 'ja'));
+  clubChips.innerHTML = `<button class="chip active" data-club="all">すべて</button>` +
+    sorted.map(c => `<button class="chip" data-club="${c}">${c}</button>`).join('');
+}
+
 function render(){
   const rows = DATA.filter(d => {
     if(state.rel !== 'all' && d.reliability !== state.rel) return false;
     if(state.league !== 'all' && d.league !== state.league) return false;
+    if(state.club !== 'all' && d.from_club !== state.club && d.to_club !== state.club) return false;
     if(state.q && !((d.player||'').toLowerCase().includes(state.q) || (d.from_club||'').toLowerCase().includes(state.q) || (d.to_club||'').toLowerCase().includes(state.q))) return false;
     return true;
   }).sort((a,b) => new Date(b.published) - new Date(a.published));
@@ -358,8 +391,9 @@ function render(){
   document.getElementById('resultCount').textContent = `${rows.length}件の情報`;
 
   document.getElementById('feed').innerHTML = rows.map(d => {
-    const fromFlag = leagueFlag[d.from_league] || '⚽';
-    const toFlag = leagueFlag[d.to_league] || '⚽';
+    const fromFlag = leagueFlag[d.from_league] || '';
+    const toFlag = leagueFlag[d.to_league] || '';
+    const hasLeagueInfo = d.from_league || d.to_league;
     return `
     <div class="card ${d.reliability}">
       <div class="card-top">
@@ -368,15 +402,16 @@ function render(){
       </div>
       <div class="player">${d.player}</div>
       <div class="route">
-        <span class="flag">${fromFlag}</span><span class="from">${d.from_club}</span>
+        ${fromFlag ? `<span class="flag">${fromFlag}</span>` : ''}<span class="from">${d.from_club}</span>
         <span class="arrow">→</span>
-        <span class="flag">${toFlag}</span><span class="to">${d.to_club}</span>
+        ${toFlag ? `<span class="flag">${toFlag}</span>` : ''}<span class="to">${d.to_club}</span>
       </div>
+      ${hasLeagueInfo ? `
       <div class="league-line">
-        <span class="flag">${fromFlag}</span><span>${leagueLabel[d.from_league] || d.from_league || '—'}</span>
+        ${fromFlag ? `<span class="flag">${fromFlag}</span>` : ''}<span>${leagueLabel[d.from_league] || (d.from_league ? d.from_league : '不明')}</span>
         <span class="arrow">→</span>
-        <span class="flag">${toFlag}</span><span>${leagueLabel[d.to_league] || d.to_league || '—'}</span>
-      </div>
+        ${toFlag ? `<span class="flag">${toFlag}</span>` : ''}<span>${leagueLabel[d.to_league] || (d.to_league ? d.to_league : '不明')}</span>
+      </div>` : ''}
       ${d.fee ? `<div class="fee-line">移籍金: <b>${d.fee}</b></div>` : ''}
       <div class="source-line">
         <a href="${d.link}" target="_blank" rel="noopener">情報ソース: ${d.source_name} ↗</a>
@@ -398,6 +433,15 @@ document.getElementById('leagueChips').addEventListener('click', e => {
   document.querySelectorAll('#leagueChips .chip').forEach(c => c.classList.remove('active'));
   btn.classList.add('active');
   state.league = btn.dataset.league;
+  state.club = 'all';
+  renderClubChips();
+  render();
+});
+document.getElementById('clubChips').addEventListener('click', e => {
+  const btn = e.target.closest('.chip'); if(!btn) return;
+  document.querySelectorAll('#clubChips .chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  state.club = btn.dataset.club;
   render();
 });
 document.getElementById('searchInput').addEventListener('input', e => {
