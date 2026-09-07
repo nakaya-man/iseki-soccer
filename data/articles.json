@@ -747,5 +747,24 @@
     "reliability": "strong",
     "ai_confidence": "medium",
     "to_league": "Jleague"
+  },
+  {
+    "id": "3dc309312981",
+    "title": "⚪️⚫️🇧🇷 Hakim Ziyech lands in Brazil on Tuesday to sign in as new Botafogo player",
+    "summary_raw": "⚪️⚫️🇧🇷 Hakim Ziyech lands in Brazil on Tuesday to sign in as new Botafogo player, here we go!\n\nDeal completed and set to be signed after Moroccan star left Wydad Casablanca as free agent. 🇲🇦 https://t.co/7WkuLGYbTH",
+    "link": "https://x.com/FabrizioRomano/status/2096785656450040290",
+    "published": "2026-09-07T02:20:31.000Z",
+    "source_name": "Fabrizio Romano (X)",
+    "source_tier": "insider",
+    "league": "multi",
+    "collected_at": "2026-09-07T08:44:43.841966+00:00",
+    "player": "ハキム・ジエッシュ",
+    "from_club": "ワイダド・カサブランカ",
+    "to_club": "ボタフォゴ",
+    "from_league": "",
+    "to_league": "",
+    "fee": "",
+    "reliability": "confirmed",
+    "ai_confidence": "high"
   }
 ]
