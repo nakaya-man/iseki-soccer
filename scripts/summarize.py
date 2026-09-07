@@ -121,8 +121,13 @@ def main():
         parsed = summarize_item(client, item)
         reliability = rule_based_reliability(item)
 
+        # 収集元が付けたリーグタグより、AIが判定した実際の移籍先リーグを優先する
+        # (例: 「さっかりん」はJリーグ関連ソースだが、海外への移籍も含むため)
+        resolved_league = parsed.get("to_league") or item.get("league", "")
+
         record = {
             **item,
+            "league": resolved_league,
             "player": parsed.get("player", ""),
             "from_club": parsed.get("from_club", ""),
             "to_club": parsed.get("to_club", ""),
