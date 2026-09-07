@@ -399,14 +399,15 @@
     "published": "2026-09-06T10:17:44.543729+00:00",
     "source_name": "ヤング・ライオンズFCへ期限付き移籍(2027年6月30日まで)(さっかりん経由)",
     "source_tier": "major",
-    "league": "Jleague",
+    "league": "",
     "collected_at": "2026-09-06T10:17:44.543745+00:00",
     "player": "西堂久俊",
     "from_club": "レノファ山口FC",
     "to_club": "ヤング・ライオンズFC",
     "fee": "",
     "reliability": "strong",
-    "ai_confidence": "high"
+    "ai_confidence": "high",
+    "to_league": ""
   },
   {
     "id": "cb6656f8af39",
@@ -423,7 +424,8 @@
     "to_club": "清水エスパルス",
     "fee": "",
     "reliability": "strong",
-    "ai_confidence": "medium"
+    "ai_confidence": "medium",
+    "to_league": "Jleague"
   },
   {
     "id": "b8b16792bd62",
@@ -440,7 +442,8 @@
     "to_club": "水戸ホーリーホック",
     "fee": "",
     "reliability": "strong",
-    "ai_confidence": "medium"
+    "ai_confidence": "medium",
+    "to_league": "Jleague"
   },
   {
     "id": "5cf3db101eea",
@@ -450,14 +453,15 @@
     "published": "2026-09-06T10:17:44.543893+00:00",
     "source_name": "レギア・ワルシャワへ期限付き移籍(2027年6月30日まで)(さっかりん経由)",
     "source_tier": "major",
-    "league": "Jleague",
+    "league": "",
     "collected_at": "2026-09-06T10:17:44.543894+00:00",
     "player": "福田心之助",
     "from_club": "京都サンガF.C.",
     "to_club": "レギア・ワルシャワ",
     "fee": "",
     "reliability": "strong",
-    "ai_confidence": "high"
+    "ai_confidence": "high",
+    "to_league": ""
   },
   {
     "id": "bb43b9d45896",
@@ -474,7 +478,8 @@
     "to_club": "水戸",
     "fee": "",
     "reliability": "strong",
-    "ai_confidence": "medium"
+    "ai_confidence": "medium",
+    "to_league": "Jleague"
   },
   {
     "id": "58398e8a9173",
@@ -491,7 +496,8 @@
     "to_club": "鹿児島ユナイテッドFC",
     "fee": "",
     "reliability": "strong",
-    "ai_confidence": "medium"
+    "ai_confidence": "medium",
+    "to_league": "Jleague"
   },
   {
     "id": "5a2c757e337a",
@@ -508,7 +514,8 @@
     "to_club": "ガンバ大阪",
     "fee": "",
     "reliability": "strong",
-    "ai_confidence": "medium"
+    "ai_confidence": "medium",
+    "to_league": "Jleague"
   },
   {
     "id": "413de2e78221",
@@ -518,14 +525,15 @@
     "published": "2026-09-06T10:17:44.544169+00:00",
     "source_name": "シャルルロワSCへ期限付き移籍(さっかりん経由)",
     "source_tier": "major",
-    "league": "Jleague",
+    "league": "",
     "collected_at": "2026-09-06T10:17:44.544170+00:00",
     "player": "名和田我空",
     "from_club": "ガンバ大阪",
     "to_club": "シャルルロワSC",
     "fee": "",
     "reliability": "strong",
-    "ai_confidence": "high"
+    "ai_confidence": "high",
+    "to_league": ""
   },
   {
     "id": "759b6daa04dc",
@@ -535,14 +543,15 @@
     "published": "2026-09-06T10:17:44.544207+00:00",
     "source_name": "マッカーサーFCへ期限付き移籍(2027年6月30日まで)(さっかりん経由)",
     "source_tier": "major",
-    "league": "Jleague",
+    "league": "",
     "collected_at": "2026-09-06T10:17:44.544208+00:00",
     "player": "奈良竜樹",
     "from_club": "アビスパ福岡",
     "to_club": "マッカーサーFC",
     "fee": "",
     "reliability": "strong",
-    "ai_confidence": "high"
+    "ai_confidence": "high",
+    "to_league": ""
   },
   {
     "id": "de10f99b9422",
@@ -559,7 +568,8 @@
     "to_club": "FC岐阜",
     "fee": "",
     "reliability": "strong",
-    "ai_confidence": "medium"
+    "ai_confidence": "medium",
+    "to_league": "Jleague"
   },
   {
     "id": "98de2048ee06",
@@ -569,14 +579,15 @@
     "published": "2026-09-06T10:17:44.544280+00:00",
     "source_name": "リヨンが4年契約で獲得した(さっかりん経由)",
     "source_tier": "major",
-    "league": "Jleague",
+    "league": "Ligue1",
     "collected_at": "2026-09-06T10:17:44.544281+00:00",
     "player": "中村敬斗",
     "from_club": "",
     "to_club": "リヨン",
     "fee": "",
     "reliability": "strong",
-    "ai_confidence": "medium"
+    "ai_confidence": "medium",
+    "to_league": "Ligue1"
   },
   {
     "id": "8c6529cf86a6",
@@ -593,7 +604,8 @@
     "to_club": "福島ユナイテッドFC",
     "fee": "",
     "reliability": "strong",
-    "ai_confidence": "medium"
+    "ai_confidence": "medium",
+    "to_league": "Jleague"
   },
   {
     "id": "d9f5d9aecdde",
@@ -603,14 +615,15 @@
     "published": "2026-09-06T10:17:44.544364+00:00",
     "source_name": "リヨンに加入することで合意した(さっかりん経由)",
     "source_tier": "major",
-    "league": "Jleague",
+    "league": "Ligue1",
     "collected_at": "2026-09-06T10:17:44.544365+00:00",
     "player": "中村敬斗",
     "from_club": "",
     "to_club": "リヨン",
     "fee": "",
     "reliability": "strong",
-    "ai_confidence": "medium"
+    "ai_confidence": "medium",
+    "to_league": "Ligue1"
   },
   {
     "id": "24783819bf0c",
@@ -620,14 +633,15 @@
     "published": "2026-09-06T10:17:44.544398+00:00",
     "source_name": "バーンリーへ完全移籍(さっかりん経由)",
     "source_tier": "major",
-    "league": "Jleague",
+    "league": "PL",
     "collected_at": "2026-09-06T10:17:44.544399+00:00",
     "player": "旗手怜央",
     "from_club": "",
     "to_club": "バーンリー",
     "fee": "",
     "reliability": "strong",
-    "ai_confidence": "medium"
+    "ai_confidence": "medium",
+    "to_league": "PL"
   },
   {
     "id": "efcbcf038355",
@@ -637,14 +651,15 @@
     "published": "2026-09-06T10:17:44.544436+00:00",
     "source_name": "レギア・ワルシャワと合意に達した(さっかりん経由)",
     "source_tier": "major",
-    "league": "Jleague",
+    "league": "",
     "collected_at": "2026-09-06T10:17:44.544437+00:00",
     "player": "福田心之助",
     "from_club": "theWORLD",
     "to_club": "レギア・ワルシャワ",
     "fee": "",
     "reliability": "strong",
-    "ai_confidence": "high"
+    "ai_confidence": "high",
+    "to_league": ""
   },
   {
     "id": "baee7cd523a6",
@@ -695,7 +710,8 @@
     "to_club": "バーンリー",
     "fee": "",
     "reliability": "strong",
-    "ai_confidence": "high"
+    "ai_confidence": "high",
+    "to_league": "PL"
   },
   {
     "id": "822b95203783",
@@ -729,6 +745,7 @@
     "to_club": "京都",
     "fee": "",
     "reliability": "strong",
-    "ai_confidence": "medium"
+    "ai_confidence": "medium",
+    "to_league": "Jleague"
   }
 ]
