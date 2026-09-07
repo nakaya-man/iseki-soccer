@@ -364,7 +364,6 @@ function renderClubChips(){
   const clubs = new Set();
   DATA.forEach(d => {
     if(d.league !== state.league) return;
-    if(d.from_club) clubs.add(d.from_club);
     if(d.to_club) clubs.add(d.to_club);
   });
 
@@ -383,7 +382,7 @@ function render(){
   const rows = DATA.filter(d => {
     if(state.rel !== 'all' && d.reliability !== state.rel) return false;
     if(state.league !== 'all' && d.league !== state.league) return false;
-    if(state.club !== 'all' && d.from_club !== state.club && d.to_club !== state.club) return false;
+    if(state.club !== 'all' && d.to_club !== state.club) return false;
     if(state.q && !((d.player||'').toLowerCase().includes(state.q) || (d.from_club||'').toLowerCase().includes(state.q) || (d.to_club||'').toLowerCase().includes(state.q))) return false;
     return true;
   }).sort((a,b) => new Date(b.published) - new Date(a.published));
