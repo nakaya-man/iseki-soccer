@@ -31,4 +31,13 @@
     "tier": "major",
     "note": "Transfermarkt公式の英語アカウント。Instagramは自動取得の公式手段がないため、X経由でTransfermarktの情報を取得する"
   }
+  ,
+  {
+    "type": "rss",
+    "name": "OurSports Central (MLS)",
+    "rss_url": "https://www.oursportscentral.com/feeds/l9.xml",
+    "league": "MLS",
+    "tier": "major",
+    "note": "MLS専用のニュースRSS。各クラブが直接リリースを提供する仕組み"
+  }
 ]
