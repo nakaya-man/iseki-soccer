@@ -766,5 +766,43 @@
     "fee": "",
     "reliability": "confirmed",
     "ai_confidence": "high"
+  },
+  {
+    "id": "c6990e67972b",
+    "title": "🚨🔴 Manchester United have completed deal to sign 16-year-old midfielder Isaac Ko",
+    "summary_raw": "🚨🔴 Manchester United have completed deal to sign 16-year-old midfielder Isaac Konde from Liverpool, here we go!\n\nAll set for #MUFC move as formal steps have been completed in the last 24 hours. https://t.co/JoYA8BcjNF",
+    "link": "https://x.com/FabrizioRomano/status/2097017141060850125",
+    "published": "2026-09-07T17:40:21.000Z",
+    "source_name": "Fabrizio Romano (X)",
+    "source_tier": "insider",
+    "league": "PL",
+    "collected_at": "2026-09-08T00:02:29.515536+00:00",
+    "player": "Isaac Konde",
+    "from_club": "Liverpool",
+    "to_club": "Manchester United",
+    "from_league": "PL",
+    "to_league": "PL",
+    "fee": "",
+    "reliability": "confirmed",
+    "ai_confidence": "high"
+  },
+  {
+    "id": "42040c13d822",
+    "title": "志知　孝明 関連の移籍情報",
+    "summary_raw": "志知　孝明 - 京都サンガF.C. 公式 完全移籍加入",
+    "link": "https://www.sanga-fc.jp/news/detail/21394",
+    "published": "2026-09-08T00:02:31.939514+00:00",
+    "source_name": "完全移籍加入(さっかりん経由)",
+    "source_tier": "major",
+    "league": "Jleague",
+    "collected_at": "2026-09-08T00:02:31.939531+00:00",
+    "player": "志知孝明",
+    "from_club": "",
+    "to_club": "京都サンガF.C.",
+    "from_league": "",
+    "to_league": "Jleague",
+    "fee": "",
+    "reliability": "strong",
+    "ai_confidence": "medium"
   }
 ]
