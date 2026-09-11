@@ -142,6 +142,7 @@ def main():
             parsed.get("confidence") == "low"
             or not parsed.get("player")
             or not parsed.get("to_club")
+            or not parsed.get("from_club")
         )
 
         if needs_review:
