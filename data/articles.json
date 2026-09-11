@@ -610,5 +610,43 @@
     "fee": "",
     "reliability": "strong",
     "ai_confidence": "high"
+  },
+  {
+    "id": "9796cfce5149",
+    "title": "Ex-West Ham striker Antonio joins Watford",
+    "summary_raw": "Watford announce the signing of former West Ham United striker Michail Antonio on a free transfer.",
+    "link": "https://www.bbc.co.uk/sport/football/articles/c4gqjqdeg8do?at_medium=RSS&at_campaign=rss",
+    "published": "Fri, 11 Sep 2026 15:04:49 GMT",
+    "source_name": "BBC Sport Football",
+    "source_tier": "major",
+    "league": "PL",
+    "collected_at": "2026-09-11T23:57:03.193418+00:00",
+    "player": "ミハイル・アントニオ",
+    "from_club": "ウェストハム・ユナイテッド",
+    "to_club": "ワトフォード",
+    "from_league": "PL",
+    "to_league": "PL",
+    "fee": "",
+    "reliability": "strong",
+    "ai_confidence": "high"
+  },
+  {
+    "id": "c36f889732a7",
+    "title": "🚨🟣🔵 Unai Emery confirms Alejandro Garnacho will be #AVFC player for “long time”.",
+    "summary_raw": "🚨🟣🔵 Unai Emery confirms Alejandro Garnacho will be #AVFC player for “long time”.\n\n“We want him at the best level. He is a player we have signed for a long time, and we will help him to feel comfortable and confident to get his quality”. 🇦🇷 https://t.co/be5RcWUPNk",
+    "link": "https://x.com/FabrizioRomano/status/2098545790331326907",
+    "published": "2026-09-11T22:54:40.000Z",
+    "source_name": "Fabrizio Romano (X)",
+    "source_tier": "insider",
+    "league": "PL",
+    "collected_at": "2026-09-11T23:57:03.956031+00:00",
+    "player": "Alejandro Garnacho",
+    "from_club": "Manchester United",
+    "to_club": "Aston Villa",
+    "from_league": "PL",
+    "to_league": "PL",
+    "fee": "",
+    "reliability": "strong",
+    "ai_confidence": "medium"
   }
 ]
