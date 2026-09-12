@@ -648,5 +648,24 @@
     "fee": "",
     "reliability": "strong",
     "ai_confidence": "medium"
+  },
+  {
+    "id": "4a2fb657e60f",
+    "title": "Signed instead of Rashford, Gordon is proving worth at Barca",
+    "summary_raw": "Anthony Gordon's £70m move to Barcelona was questioned by some - but the England winger is already proving his worth for the free-scoring Spanish giants.",
+    "link": "https://www.bbc.co.uk/sport/football/articles/cgk5n3xpkv2o?at_medium=RSS&at_campaign=rss",
+    "published": "Sat, 12 Sep 2026 06:14:51 GMT",
+    "source_name": "BBC Sport Football",
+    "source_tier": "major",
+    "league": "LaLiga",
+    "collected_at": "2026-09-12T23:50:31.811829+00:00",
+    "player": "Anthony Gordon",
+    "from_club": "Newcastle United",
+    "to_club": "Barcelona",
+    "from_league": "PL",
+    "to_league": "LaLiga",
+    "fee": "£70m",
+    "reliability": "strong",
+    "ai_confidence": "high"
   }
 ]
