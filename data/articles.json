@@ -1036,5 +1036,24 @@
     "fee": "",
     "reliability": "strong",
     "ai_confidence": "medium"
+  },
+  {
+    "id": "79d0f28122d1",
+    "title": "G大阪　FC東京FW小柏剛を完全移籍で獲得へ　圧倒的なスピード誇るアタッカー(スポニチアネックス)\n#Yahooニュース\nhttps://t.co/kLwDHt",
+    "summary_raw": "G大阪　FC東京FW小柏剛を完全移籍で獲得へ　圧倒的なスピード誇るアタッカー(スポニチアネックス)\n#Yahooニュース\nhttps://t.co/kLwDHt8kT8",
+    "link": "https://x.com/Jleague_shijo/status/2099270496579916248",
+    "published": "2026-09-13T22:54:23.000Z",
+    "source_name": "Jリーグ移籍情報 (X)",
+    "source_tier": "insider",
+    "league": "Jleague",
+    "collected_at": "2026-09-13T23:56:11.081492+00:00",
+    "player": "小柏剛",
+    "from_club": "FC東京",
+    "to_club": "ガンバ大阪",
+    "from_league": "Jleague",
+    "to_league": "Jleague",
+    "fee": "",
+    "reliability": "strong",
+    "ai_confidence": "high"
   }
 ]
