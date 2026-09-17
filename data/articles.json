@@ -1245,5 +1245,24 @@
     "fee": "",
     "reliability": "strong",
     "ai_confidence": "high"
+  },
+  {
+    "id": "cdaf6b8d1367",
+    "title": "San Diego FC Transfers Forward Bryce Duke to Wellington Phoenix FC",
+    "summary_raw": "SAN DIEGO - San Diego FC (SDFC) announced today that the Club has transferred forward Bryce Duke to Wellington Phoenix in Australia's A-League.Duk... - MLS San Diego FC",
+    "link": "https://www.oursportscentral.com/services/releases/san-diego-fc-transfers-forward-bryce-duke-to-wellington-phoenix-fc/n-6413391",
+    "published": "Tue, 15 Sep 2026 22:37:00 UTC",
+    "source_name": "OurSports Central (MLS)",
+    "source_tier": "major",
+    "league": "MLS",
+    "collected_at": "2026-09-17T00:11:29.870563+00:00",
+    "player": "Bryce Duke",
+    "from_club": "San Diego FC",
+    "to_club": "Wellington Phoenix FC",
+    "from_league": "MLS",
+    "to_league": "",
+    "fee": "",
+    "reliability": "strong",
+    "ai_confidence": "high"
   }
 ]
