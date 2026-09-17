@@ -105,6 +105,17 @@ def summarize_item(client, item):
         return {"player": "", "from_club": "", "to_club": "", "fee": "", "confidence": "low"}
 
 
+def norm_key(player, to_club):
+    """選手名・移籍先クラブ名を正規化して重複判定キーを作る"""
+    import unicodedata
+    def n(s):
+        return unicodedata.normalize("NFKC", s or "").replace(" ", "").replace("　", "")
+    return (n(player), n(to_club))
+
+
+RELIABILITY_RANK = {"rumor": 0, "strong": 1, "confirmed": 2}
+
+
 def main():
     pending = load_json(PENDING_PATH, [])
     articles = load_json(ARTICLES_PATH, [])
@@ -118,6 +129,12 @@ def main():
 
     published_count = 0
     flagged_count = 0
+    upgraded_count = 0
+
+    # 既存記事を (選手名, 移籍先) で検索できるようにしておく
+    existing_index = {}
+    for idx, a in enumerate(articles):
+        existing_index[norm_key(a.get("player"), a.get("to_club"))] = idx
 
     for item in pending:
         parsed = summarize_item(client, item)
@@ -151,13 +168,33 @@ def main():
             review_queue.append(record)
             flagged_count += 1
         else:
-            articles.append(record)
-            published_count += 1
+            key = norm_key(record["player"], record["to_club"])
+            existing_pos = existing_index.get(key)
+
+            if existing_pos is not None:
+                old = articles[existing_pos]
+                old_rank = RELIABILITY_RANK.get(old.get("reliability"), 0)
+                new_rank = RELIABILITY_RANK.get(reliability, 0)
+
+                if new_rank >= old_rank:
+                    # 信頼度が同じ以上なら、最新情報で上書き(噂→有力→確定、と格上げしていく)
+                    merged = {**old, **record}
+                    # 移籍金は新しい情報にあればそちらを、なければ元のまま残す
+                    if not merged.get("fee"):
+                        merged["fee"] = old.get("fee", "")
+                    articles[existing_pos] = merged
+                    if new_rank > old_rank:
+                        upgraded_count += 1
+                # 信頼度が下がる場合は何もしない(古い方が信頼できる情報として残す)
+            else:
+                articles.append(record)
+                existing_index[key] = len(articles) - 1
+                published_count += 1
 
     save_json(ARTICLES_PATH, articles)
     save_json(REVIEW_QUEUE_PATH, review_queue)
 
-    print(f"公開: {published_count} 件 / 確認待ちに回した: {flagged_count} 件")
+    print(f"公開: {published_count} 件 / 信頼度アップグレード: {upgraded_count} 件 / 確認待ちに回した: {flagged_count} 件")
 
 
 if __name__ == "__main__":
