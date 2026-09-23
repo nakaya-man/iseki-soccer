@@ -1397,5 +1397,24 @@
     "fee": "",
     "reliability": "strong",
     "ai_confidence": "high"
+  },
+  {
+    "id": "ee31dd51cc95",
+    "title": "Chelsea struggles to Villa bench - Garnacho faces defining season",
+    "summary_raw": "Alejandro Garnacho joined Aston Villa on loan from Chelsea with a view to kick-starting his career, but his early weeks in the Midlands have been a struggle.",
+    "link": "https://www.bbc.co.uk/sport/football/articles/c51kxgj43n89o?at_medium=RSS&at_campaign=rss",
+    "published": "Tue, 22 Sep 2026 06:19:17 GMT",
+    "source_name": "BBC Sport Football",
+    "source_tier": "major",
+    "league": "PL",
+    "collected_at": "2026-09-23T00:06:49.380233+00:00",
+    "player": "アレハンドロ・ガルナチョ",
+    "from_club": "チェルシー",
+    "to_club": "アストン・ビラ",
+    "from_league": "PL",
+    "to_league": "PL",
+    "fee": "",
+    "reliability": "strong",
+    "ai_confidence": "medium"
   }
 ]
